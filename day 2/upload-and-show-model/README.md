@@ -34,7 +34,7 @@ Dokumentacja: https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-
 
 # Krok 5 - Pobranie linków do uploadu plików
 
-Dokumentacja: https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-:objectKey-signeds3download-GET/
+Dokumentacja: https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-:objectKey-signeds3upload-GET/
 
 
 # Krok 6 - upload plików
