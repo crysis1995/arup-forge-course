@@ -3,13 +3,13 @@ import fetch from "node-fetch";
 
 class AutodeskAuth {
     async login(){
-        const CLIENT_ID = "Pe3ES6o0tvbPTPEk8Aq8ASy9ziXx13YW";
-        const CLIENT_SECRET = "K5Q3LsK2JGgFFNFu"
+        const CLIENT_ID = "g8rxvku2doYCq2NgssfAMWANwaXjP3MP";
+        const CLIENT_SECRET = "kvGPq9mNuMxcLdpB"
         var details = {
             'client_id': CLIENT_ID,
             'client_secret': CLIENT_SECRET,
             'grant_type': 'client_credentials',
-            "scope":"bucket:read bucket:create"
+            "scope":"bucket:read bucket:create data:read data:write data:create"
         };
         
         var formBody = [];

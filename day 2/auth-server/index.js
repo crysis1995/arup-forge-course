@@ -9,7 +9,9 @@ const port = 3000
 const autodeskAuth = new AutodeskAuth();
 
 app.get('/', async (req, res) => {
-   res.send(await autodeskAuth.login());
+  const data = await autodeskAuth.login();
+  res.setHeader("Access-Control-Allow-Origin","*")
+   res.send(data);
 })
 
 app.listen(port, () => {

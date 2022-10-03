@@ -1,4 +1,9 @@
 class MyAwesomeExtension extends Autodesk.Viewing.Extension {
+    static get name(){
+        return "MyAwesomeExtension"
+    }
+
+
     constructor(viewer, options) {
         super(viewer, options);
         this._group = null;
@@ -23,6 +28,12 @@ class MyAwesomeExtension extends Autodesk.Viewing.Extension {
     }
 
     onToolbarCreated() {
+        this.viewer.addEventListener(Autodesk.Viewing.SELECTION_CHANGED_EVENT,()=>{
+            console.log("SELECTION_CHANGED_EVENT")
+        })
+
+
+
         // Create a new toolbar group if it doesn't exist
         this._group = this.viewer.toolbar.getControl('allMyAwesomeExtensionsToolbar');
         if (!this._group) {
@@ -32,6 +43,7 @@ class MyAwesomeExtension extends Autodesk.Viewing.Extension {
 
         // Add a new button to the toolbar group
         this._button = new Autodesk.Viewing.UI.Button('myAwesomeExtensionButton');
+
         this._button.onClick = (ev) => {
             // Execute an action here
         };
@@ -39,6 +51,7 @@ class MyAwesomeExtension extends Autodesk.Viewing.Extension {
         this._button.addClass('myAwesomeExtensionIcon');
         this._group.addControl(this._button);
     }
+
 }
 
 Autodesk.Viewing.theExtensionManager.registerExtension('MyAwesomeExtension', MyAwesomeExtension);
